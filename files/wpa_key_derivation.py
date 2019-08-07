@@ -49,6 +49,15 @@ Clientmac   = a2b_hex("0013efd015bd") #MAC address of the client
 ANonce      = a2b_hex("90773b9a9661fee1f406e8989c912b45b029c652224e8b561417672ca7e0fd91")
 SNonce      = a2b_hex("7b3826876d14ff301aee7c1072b5e9091e21169841bce9ae8a3f24628f264577")
 
+# Non hardcoded version
+ssid = wpa[0].payload
+APmac = wpa[0].payload.addr2
+Clientmac = wpa[1].payload.addr1
+ANonce = ""
+SNonce = ""
+
+
+
 # This is the MIC contained in the 4th frame of the 4-way handshake. I copied it by hand.
 # When trying to crack the WPA passphrase, we will compare it to our own MIC calculated using passphrases from a dictionary
 mic_to_test = "36eef66540fa801ceee2fea9b7929b40"
