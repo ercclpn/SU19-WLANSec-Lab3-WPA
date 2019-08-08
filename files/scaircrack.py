@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 """
 - Derive WPA keys from Passphrase and 4-way handshake info
 
@@ -34,6 +31,12 @@ def customPRF512(key,A,B):
         i+=1
         R = R+hmacsha1.digest()
     return R[:blen]
+
+dico = open('dictionary.txt', 'r')
+
+i = 0
+while True:
+    passWord = dico[i]
 
 # Read capture file -- it contains beacon, open authentication, associacion, 4-way handshake and data
 wpa=rdpcap("wpa_handshake.cap") 
