@@ -85,7 +85,7 @@ MIC_hex_truncated = mic.hexdigest()[0:32]
 
 dico = open('dico.txt', 'r')
 
-line = dico.readline().replace('\n', '').replace('r', '')
+line = dico.readline().replace('\n', '').replace('\r', '')
 
 #We loop until the mic has for the word in the dictionnary match the mic has password defined in mic_to_test.
 while line:
