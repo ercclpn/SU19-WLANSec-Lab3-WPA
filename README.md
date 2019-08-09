@@ -1,10 +1,12 @@
-# Eric Tran - Sangyoon Cha - Alexandre Monteiro Marques
-
 # Wireless Networks and Security
 
 ## WPA Security
 
 __Korean/Swiss hybrid teams are highly encouraged__
+
+## Student's name
+
+Eric Tran - Sangyoon Cha - Alexandre Monteiro Marques
 
 ### For this first part, you will need to:
 
@@ -67,8 +69,8 @@ Fork of the original repo. Then, a Pull Request containing :
 
 ## Screenshot of result terminal of wpa_key_derivation.py
 
-![first screen](files\src\execPartOne.PNG)
+![first screen](files/src/execPartOne.PNG)
 
 ## Screenshot of result terminal of scaircrack.py
 
-![second screen](files\src\execPartTwo.PNG)
+![second screen](files/src/execPartTwo.PNG)
