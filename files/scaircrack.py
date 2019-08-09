@@ -85,7 +85,7 @@ MIC_hex_truncated = mic.hexdigest()[0:32]
 
 dico = open('dico.txt', 'r')
 
-line = dico.readline().replace('\n', '').replace('r', '')
+line = dico.readline().replace('\n', '').replace('\r', '')
 
 while line:
 
