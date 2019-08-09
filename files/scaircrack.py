@@ -1,15 +1,15 @@
-"""
-- Derive WPA keys from Passphrase and 4-way handshake info
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-- Calculate an authentication MIC (the mic for data transmission uses the
-Michael algorithm. In the case of authentication, we use SHA-1 or MD5)
+
+"""
+- Crack a password using data from a 4 ways handshake
 """
 
 __author__      = "Eric tran, Sangyoon Cha, Alexandre Monteiro Marques"
 __copyright__   = "Copyright 2017, HEIG-VD"
 __license__ 	= "GPL"
 __version__ 	= "1.0"
-__email__ 		= "eric.tran@heig-vd.ch"
 __status__ 		= "Prototype"
 
 from scapy.all import *
@@ -87,6 +87,7 @@ dico = open('dico.txt', 'r')
 
 line = dico.readline().replace('\n', '').replace('r', '')
 
+#We loop until the mic has for the word in the dictionnary match the mic has password defined in mic_to_test.
 while line:
 
     pmk = pbkdf2_hex(line, ssid, 4096, 32)

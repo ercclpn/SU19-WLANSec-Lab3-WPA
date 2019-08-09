@@ -12,7 +12,6 @@ __author__      = "Eric tran, Sangyoon Cha, Alexandre Monteiro Marques"
 __copyright__   = "Copyright 2017, HEIG-VD"
 __license__ 	= "GPL"
 __version__ 	= "1.0"
-__email__ 		= "eric.tran@heig-vd.ch"
 __status__ 		= "Prototype"
 
 from scapy.all import *
