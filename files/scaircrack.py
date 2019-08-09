@@ -6,7 +6,7 @@
 - Crack a password using data from a 4 ways handshake
 """
 
-__author__      = "Eric tran, Sangyoon Cha, Alexandre Monteiro Marques"
+__author__      = "Eric Tran, Sangyoon Cha, Alexandre Monteiro Marques"
 __copyright__   = "Copyright 2017, HEIG-VD"
 __license__ 	= "GPL"
 __version__ 	= "1.0"
