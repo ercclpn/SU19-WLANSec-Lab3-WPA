@@ -87,7 +87,7 @@ dico = open('dico.txt', 'r')
 
 line = dico.readline().replace('\n', '').replace('\r', '')
 
-#We loop until the mic has for the word in the dictionnary match the mic hash password defined in mic_to_test.
+#We loop until the mic hash for the word in the dictionnary match the mic hash password defined in mic_to_test.
 while line:
 
     pmk = pbkdf2_hex(line, ssid, 4096, 32)
