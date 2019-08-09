@@ -1,3 +1,5 @@
+# Eric Tran - Sangyoon Cha - Alexandre Monteiro Marques
+
 # Wireless Networks and Security
 
 ## WPA Security
@@ -62,3 +64,11 @@ Fork of the original repo. Then, a Pull Request containing :
    - Screen grab of your script in action
 - ```scaircrack.py``` script __extensively commented/documented__ + the wordlist file
    - Screen grab of your script in action
+
+## Screenshot of result terminal of wpa_key_derivation.py
+
+![first screen](files\src\execPartOne.PNG)
+
+## Screenshot of result terminal of scaircrack.py
+
+![second screen](files\src\execPartTwo.PNG)
